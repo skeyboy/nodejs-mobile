@@ -5,16 +5,17 @@ on:
     branches:
       - node-ios-v18
 
-env:
-  SCCACHE_VERSION: 0.2.15
-
 jobs:
   build-ios:
     runs-on: macos-14
     steps:
       - uses: actions/checkout@v2
 
-      - run: sudo xcode-select -s "/Applications/Xcode_15.2.app"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: sudo xcode-select -s "/Applications/Xcode_15.3.app"
 
       - name: build framework
         run: |
