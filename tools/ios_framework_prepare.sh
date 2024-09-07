@@ -2,7 +2,7 @@
 set -e
 export HOST_ARCH="$(uname -m)"
 export COMPILE_FOR_ARCHS=(
-     x86_64
+     x86_64 arm64
 )
 
 # if [ "${HOST_ARCH}" != "arm64" ]; then
